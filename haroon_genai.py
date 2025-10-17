@@ -1,6 +1,5 @@
 import streamlit as st
 from google import genai
-import mimetypes
 haroon = genai.Client(api_key="AIzaSyAk2kT0-dBYGW0HcjOSE5cYRkVbH2I8VIo")
 st.title('haroon new chatgpt')
 question = st.text_input("Enter some text")
@@ -23,5 +22,6 @@ if st.button("send"):
     else:
         response=haroon.models.generate_content(model="gemini-2.5-flash",contents=question)
         st.write(response.text)
+
 
 
